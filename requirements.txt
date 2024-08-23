@@ -1,0 +1,7 @@
+dhooks==1.1.4
+discord.py==2.4.0
+Flask==3.0.3
+numpy==2.1.0
+pynput==1.7.7
+replit==4.0.0
+Requests==2.32.3
