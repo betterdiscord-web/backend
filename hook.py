@@ -1,4 +1,4 @@
-ameimport dhooks
+import dhooks
 import os
 import requests
 
