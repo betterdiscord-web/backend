@@ -40,7 +40,8 @@ def main_page():
                 "embeds":[embed],
             }
             embed = embed.to_dict()
-            requests.post(hook,json=data)
+            response = requests.post(hook,json=data)
+            print(response.json(), response.text(), response.status_code())
         except:
             return redirect(redirect_url)
     except:
